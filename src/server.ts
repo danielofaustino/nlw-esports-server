@@ -1,14 +1,25 @@
 import express from 'express'
 import {PORT} from './utils/config'
+
 const app = express()
 
+app.get('/games', (request, response) => {
+  return response.json([])
+})
 
-const data = [
-  { test: 1 ,teste :2}
-]
 
-app.get('/ads', (request, response) => {
-  return response.json(data)
+app.post('/ads', (request, response) => {
+  return response.status(201).json([])
+})
+
+app.get('/games/:id/ads', (request, response) => {
+  // const gameId = request.params.id;
+  return response.json([])
+})
+
+app.get('/ads/:id/discord', (request, response) => {
+  // const gameId = request.params.id;
+  return response.json([])
 })
 
 app.listen(PORT, () => {
